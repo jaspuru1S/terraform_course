@@ -1,0 +1,1 @@
+#Define resources for base infrastructure
