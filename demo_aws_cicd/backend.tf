@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "jaspuru-terraform-state"
-    key            = "infra/bootstrap"
+    key            = "infra/repos"
     region         = "us-west-2"
     dynamodb_table = "terraform"
   }
