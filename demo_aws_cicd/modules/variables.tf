@@ -16,5 +16,5 @@ variable "description" {
 }
 
 variable "default_repo_branch" {
-    default = "main"
+    default = "master"
 }
