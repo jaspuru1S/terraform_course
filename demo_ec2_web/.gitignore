@@ -2,8 +2,6 @@
 **/.terraform/*
 .terraform
 
-# Codecommit repo
-demo_ec2_web/ec2-web
 # .tfstate files
 *.tfstate
 *.tfstate.*
