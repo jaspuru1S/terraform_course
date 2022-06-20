@@ -88,6 +88,7 @@ resource "aws_codepipeline" "codepipeline" {
 
 resource "aws_s3_bucket" "codepipeline_bucket" {
   bucket = "${var.repo_name}-artifact-bucket"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_acl" "codepipeline_bucket_acl" {
@@ -273,6 +274,7 @@ resource "aws_codebuild_project" "build_tf_apply" {
 
 resource "aws_s3_bucket" "build_bucket" {
   bucket = "${var.repo_name}-build-bucket"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_acl" "build_bucket_acl" {
