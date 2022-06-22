@@ -17,9 +17,9 @@ phases:
       - tfenv install
   pre_build:
     commands:
+      - terraform init
       - if ! terraform workspace list | grep $TERRAFORM_WORKSPACE; then terraform workspace new $TERRAFORM_WORKSPACE; fi
       - terraform workspace select $TERRAFORM_WORKSPACE
-      - terraform init
       - terraform validate
   build:
     commands:
