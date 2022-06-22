@@ -4,6 +4,7 @@ env:
   git-credential-helper: yes
   variables:
     TF_VERSION: "1.0.11"
+    TERRAFORM_WORKSPACE: dev
   #parameter-store:
     #maybe_password: "/secret-params/test/some/password"
 
@@ -16,6 +17,8 @@ phases:
       - tfenv install
   pre_build:
     commands:
+      - if ! terraform workspace list | grep $TERRAFORM_WORKSPACE; then terraform workspace new $TERRAFORM_WORKSPACE; fi
+      - terraform workspace select $TERRAFORM_WORKSPACE
       - terraform init
       - terraform validate
   build:
